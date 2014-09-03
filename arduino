@@ -1,1 +1,17 @@
-#Arduino #
+/*Arduino*/
+char ch="1";
+void setup()
+{
+	Serial.begin(9600);
+}
+
+void loop()
+{
+	Serial.write(ch);
+	while(1)
+	{
+		if(Serial.available())
+		ch = Serialread();
+		Serial.println("A basic test for Git");
+	}
+}
