@@ -1,20 +1,20 @@
 /*Arduino code*/
 	
-	char ch="1";
-	void setup()
-	{
-		Serial.begin(9600);
-	}
+    char ch="1";
+    void setup()
+    {
+        Serial.begin(9600);
+    }
 		
-	void loop()
+    void loop()
+    {
+	Serial.write(ch);
+	while(1)
 	{
-		Serial.write(ch);
-		while(1)
+	    if(Serial.available())
 		{
-			if(Serial.available())
-			{
-				ch = Serialread();
-				Serial.println("A basic test for Git");
-			}
+		    ch = Serialread();
+		    Serial.println("A basic test for Git");
 		}
 	}
+    }
